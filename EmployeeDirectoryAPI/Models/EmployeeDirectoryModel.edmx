@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EmployeeDirectoryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="RoleID" Type="int" />
+          <Property Name="DepartmentID" Type="bigint" />
+          <Property Name="DesignationID" Type="bigint" />
+          <Property Name="GradeID" Type="char" MaxLength="2" />
+          <Property Name="EmployeeNo" Type="varchar" MaxLength="25" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="FullName" Type="varchar" MaxLength="50" />
+          <Property Name="CommonName" Type="varchar" MaxLength="25" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="ReportingManagerID" Type="bigint" />
+          <Property Name="DomainUserName" Type="varchar" MaxLength="25" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="DateModified" Type="datetime" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="SubstitudeID" Type="int" />
+          <Property Name="ProfilePicture" Type="image" />
+          <Property Name="FatherName" Type="varchar" MaxLength="50" />
+          <Property Name="DateofBirth" Type="datetime" />
+          <Property Name="Gender" Type="varchar" MaxLength="25" />
+          <Property Name="MaritalStatus" Type="varchar" MaxLength="25" />
+          <Property Name="PersonalEmail" Type="varchar" MaxLength="50" />
+          <Property Name="OfficialEmail" Type="varchar" MaxLength="50" />
+          <Property Name="Mobile" Type="varchar" MaxLength="50" />
+          <Property Name="ContactPhone" Type="varchar" MaxLength="50" />
+          <Property Name="Ext" Type="varchar" MaxLength="10" />
+          <Property Name="CNIC" Type="varchar" MaxLength="15" />
+          <Property Name="BankAccountNumber" Type="varchar" MaxLength="20" />
+          <Property Name="JoiningDate" Type="datetime" />
+          <Property Name="AppraisalDate" Type="datetime" />
+          <Property Name="AppraisalType" Type="varchar" MaxLength="20" />
+          <Property Name="IsOnProbation" Type="bit" />
+          <Property Name="ProbationStartDate" Type="datetime" />
+          <Property Name="ProbationEnddate" Type="datetime" />
+          <Property Name="CurrentStatus" Type="char" MaxLength="1" />
+          <Property Name="ProRateByDate" Type="datetime" />
+          <Property Name="BankID" Type="bigint" />
+          <Property Name="BankAccountTitle" Type="varchar" MaxLength="100" />
+          <Property Name="OpeningBalance" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="PreviousGradeID" Type="char" MaxLength="2" />
+          <Property Name="IsAllowed" Type="bit" />
+        </EntityType>
+        <Association Name="FK_Employee_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Employee1" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Employee1">
+              <PropertyRef Name="SubstitudeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EmployeeDirectoryModelStoreContainer">
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Employee_Employee" Association="Self.FK_Employee_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Employee1" EntitySet="Employee" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EmployeeDirectoryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="RoleID" Type="Int32" />
+          <Property Name="DepartmentID" Type="Int64" />
+          <Property Name="DesignationID" Type="Int64" />
+          <Property Name="GradeID" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="EmployeeNo" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CommonName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="ReportingManagerID" Type="Int64" />
+          <Property Name="DomainUserName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="DateModified" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="SubstitudeID" Type="Int32" />
+          <Property Name="ProfilePicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateofBirth" Type="DateTime" Precision="3" />
+          <Property Name="Gender" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="MaritalStatus" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PersonalEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OfficialEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ext" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CNIC" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="BankAccountNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="JoiningDate" Type="DateTime" Precision="3" />
+          <Property Name="AppraisalDate" Type="DateTime" Precision="3" />
+          <Property Name="AppraisalType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IsOnProbation" Type="Boolean" />
+          <Property Name="ProbationStartDate" Type="DateTime" Precision="3" />
+          <Property Name="ProbationEnddate" Type="DateTime" Precision="3" />
+          <Property Name="CurrentStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ProRateByDate" Type="DateTime" Precision="3" />
+          <Property Name="BankID" Type="Int64" />
+          <Property Name="BankAccountTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OpeningBalance" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="PreviousGradeID" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="IsAllowed" Type="Boolean" />
+          <NavigationProperty Name="Employee1" Relationship="Self.FK_Employee_Employee" FromRole="Employee" ToRole="Employee1" />
+          <NavigationProperty Name="Employee2" Relationship="Self.FK_Employee_Employee" FromRole="Employee1" ToRole="Employee" />
+        </EntityType>
+        <Association Name="FK_Employee_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Employee1" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Employee1">
+              <PropertyRef Name="SubstitudeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EmployeeDirectoryEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <AssociationSet Name="FK_Employee_Employee" Association="Self.FK_Employee_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Employee1" EntitySet="Employees" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EmployeeDirectoryModelStoreContainer" CdmEntityContainer="EmployeeDirectoryEntities">
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="EmployeeDirectoryModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="DesignationID" ColumnName="DesignationID" />
+                <ScalarProperty Name="GradeID" ColumnName="GradeID" />
+                <ScalarProperty Name="EmployeeNo" ColumnName="EmployeeNo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="CommonName" ColumnName="CommonName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ReportingManagerID" ColumnName="ReportingManagerID" />
+                <ScalarProperty Name="DomainUserName" ColumnName="DomainUserName" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="SubstitudeID" ColumnName="SubstitudeID" />
+                <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="PersonalEmail" ColumnName="PersonalEmail" />
+                <ScalarProperty Name="OfficialEmail" ColumnName="OfficialEmail" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="Ext" ColumnName="Ext" />
+                <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+                <ScalarProperty Name="BankAccountNumber" ColumnName="BankAccountNumber" />
+                <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+                <ScalarProperty Name="AppraisalDate" ColumnName="AppraisalDate" />
+                <ScalarProperty Name="AppraisalType" ColumnName="AppraisalType" />
+                <ScalarProperty Name="IsOnProbation" ColumnName="IsOnProbation" />
+                <ScalarProperty Name="ProbationStartDate" ColumnName="ProbationStartDate" />
+                <ScalarProperty Name="ProbationEnddate" ColumnName="ProbationEnddate" />
+                <ScalarProperty Name="CurrentStatus" ColumnName="CurrentStatus" />
+                <ScalarProperty Name="ProRateByDate" ColumnName="ProRateByDate" />
+                <ScalarProperty Name="BankID" ColumnName="BankID" />
+                <ScalarProperty Name="BankAccountTitle" ColumnName="BankAccountTitle" />
+                <ScalarProperty Name="OpeningBalance" ColumnName="OpeningBalance" />
+                <ScalarProperty Name="PreviousGradeID" ColumnName="PreviousGradeID" />
+                <ScalarProperty Name="IsAllowed" ColumnName="IsAllowed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
