@@ -21,6 +21,7 @@ namespace EmployeeDirectoryAPI.Models
         }
     
         public int EmployeeID { get; set; }
+        public string Address { get; set; }
         public Nullable<int> RoleID { get; set; }
         public Nullable<long> DepartmentID { get; set; }
         public Nullable<long> DesignationID { get; set; }

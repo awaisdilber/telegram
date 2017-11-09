@@ -12,90 +12,140 @@ namespace EmployeeDirectoryAPI.Controllers
     {        
         IList<Employee> employees = new List<Employee>()  
         {  
-            //new Employee()  
-            //    {  
-            //        EmployeeId = "1", 
-            //        EmployeeName = "Amin Ansari", 
-            //        Department = "Management",
-            //        Ext = "101",
-            //        ContactNumber = "0312-842-9631",
-            //        EmergencyContactNumber = "0312-842-9631",
-            //        Address = "Model Town" 
-            //    },  
-            //    new Employee()  
-            //    {  
-            //        EmployeeId = "2", 
-            //        EmployeeName = "Nadeem Ahmed", 
-            //        Department = "Application Development",
-            //        Ext = "104",
-            //        ContactNumber = "0300-842-9631",
-            //        EmergencyContactNumber = "0300-842-9631",
-            //        Address = "Bahria Town" 
-            //    },  
-            //    new Employee()  
-            //    {  
-            //        EmployeeId = "4", 
-            //        EmployeeName = "Shahid Ashraf", 
-            //        Department = "Application Support",
-            //        Ext = "129",
-            //        ContactNumber = "0321-842-9631",
-            //        EmergencyContactNumber = "0321-842-9631",
-            //        Address = "Bahria Town" 
-            //    },  
-            //    new Employee()  
-            //    {  
-            //        EmployeeId = "3", 
-            //        EmployeeName = "Fawad Zia Qureshi", 
-            //        Department = "Quality Assurance",
-            //        Ext = "103",
-            //        ContactNumber = "0345-842-9631",
-            //        EmergencyContactNumber = "0345-842-9631",
-            //        Address = "BR Society" 
-            //    },  
-            //    new Employee()  
-            //    {  
-            //        EmployeeId = "5", 
-            //        EmployeeName = "Muhammad Reza", 
-            //        Department = "Software Development",
-            //        Ext = "129",
-            //        ContactNumber = "0333-842-9631",
-            //        EmergencyContactNumber = "0333-842-9631",
-            //        Address = "Model Town Extension" 
-            //    }  
+            new Employee()  
+                {  
+                    EmployeeID = 1, 
+                    FullName = "Amin Ansari", 
+                    DepartmentID = 1,
+                    Ext = "101",
+                    Mobile = "0312-842-9631",
+                    ContactPhone = "0312-842-9631",
+                    Address = "Model Town" 
+                },  
+                new Employee()  
+                {  
+                    EmployeeID = 2, 
+                    FullName = "Nadeem Ahmed", 
+                    DepartmentID = 1,
+                    Ext = "104",
+                    Mobile = "0300-842-9631",
+                    ContactPhone = "0300-842-9631",
+                    Address = "Bahria Town" 
+                },  
+                new Employee()  
+                {  
+                    EmployeeID = 4, 
+                    FullName = "Shahid Ashraf", 
+                    DepartmentID = 1,
+                    Ext = "129",
+                    Mobile = "0321-842-9631",
+                    ContactPhone = "0321-842-9631",
+                    Address = "Bahria Town" 
+                },  
+                new Employee()  
+                {  
+                    EmployeeID = 3, 
+                    FullName = "Fawad Zia Qureshi", 
+                    DepartmentID = 1,
+                    Ext = "103",
+                    Mobile = "0345-842-9631",
+                    ContactPhone = "0345-842-9631",
+                    Address = "BR Society" 
+                },  
+                new Employee()  
+                {  
+                    EmployeeID = 5, 
+                    FullName = "Muhammad Reza", 
+                    DepartmentID = 1,
+                    Ext = "129",
+                    Mobile = "0333-842-9631",
+                    ContactPhone = "0333-842-9631",
+                    Address = "Model Town Extension" 
+                },
+                new Employee()  
+                {  
+                    EmployeeID = 87, 
+                    FullName = "Awais Dilber", 
+                    DepartmentID = 1,
+                    Ext = "101",
+                    Mobile = "0312-842-9631",
+                    ContactPhone = "0312-842-9631",
+                    Address = "Model Town" 
+                },  
+                new Employee()  
+                {  
+                    EmployeeID = 101, 
+                    FullName = "Muhammad Yasin", 
+                    DepartmentID = 1,
+                    Ext = "104",
+                    Mobile = "0300-842-9631",
+                    ContactPhone = "0300-842-9631",
+                    Address = "Bahria Town" 
+                },  
+                new Employee()  
+                {  
+                    EmployeeID = 44, 
+                    FullName = "Nayyar Raza Malhi Longest Name In App", 
+                    DepartmentID = 1,
+                    Ext = "129",
+                    Mobile = "0321-842-9631",
+                    ContactPhone = "0321-842-9631",
+                    Address = "Bahria Town" 
+                },  
+                new Employee()  
+                {  
+                    EmployeeID = 33, 
+                    FullName = "Raheel Abbas", 
+                    DepartmentID = 1,
+                    Ext = "103",
+                    Mobile = "0345-842-9631",
+                    ContactPhone = "0345-842-9631",
+                    Address = "BR Society" 
+                },  
+                new Employee()  
+                {  
+                    EmployeeID = 55, 
+                    FullName = "Muhammad Zain Sheikh", 
+                    DepartmentID = 1,
+                    Ext = "129",
+                    Mobile = "0333-842-9631",
+                    ContactPhone = "0333-842-9631",
+                    Address = "Model Town Extension" 
+                }  
         };
-        public IList<EmployeeInfo> GetAllEmployees()
+        public IList<Employee> GetAllEmployees()
         {
             //Return list of all employees  
-            //return employees;
-
-            List<EmployeeInfo> employees = new List<EmployeeInfo>();
-
-            using (var context = new EmployeeDirectoryEntities())
-            {
-                var dbEmployees = context.Employees.Where(x => x.IsActive == true).ToList();
-
-                foreach (var employee in dbEmployees)
-                {
-                    employees.Add(new EmployeeInfo() {
-                        EmployeeNo = employee.EmployeeNo,
-                        FullName = employee.FullName,
-                        CommonName = employee.CommonName,
-                        FatherName = employee.FatherName,
-                        ContactPhone = employee.ContactPhone,
-                        Email = employee.Email,
-                        PersonalEmail = employee.PersonalEmail,
-                        OfficialEamil = employee.OfficialEmail,
-                        Mobile = employee.Mobile,
-                        Extension = employee.Ext,
-                        Gender = employee.Gender,
-                        DateOfBirth = employee.DateofBirth.HasValue ? employee.DateofBirth.Value.ToShortDateString() : string.Empty,
-                        DateOfJoining = employee.JoiningDate.HasValue ? employee.JoiningDate.Value.ToShortDateString() : string.Empty,
-                        IsActive = employee.IsActive.HasValue ? employee.IsActive.Value : false,
-                    });
-                }
-            }
-
             return employees;
+
+            //List<EmployeeInfo> employees = new List<EmployeeInfo>();
+
+            //using (var context = new EmployeeDirectoryEntities())
+            //{
+            //    var dbEmployees = context.Employees.Where(x => x.IsActive == true).ToList();
+
+            //    foreach (var employee in dbEmployees)
+            //    {
+            //        employees.Add(new EmployeeInfo() {
+            //            EmployeeNo = employee.EmployeeNo,
+            //            FullName = employee.FullName,
+            //            CommonName = employee.CommonName,
+            //            FatherName = employee.FatherName,
+            //            ContactPhone = employee.ContactPhone,
+            //            Email = employee.Email,
+            //            PersonalEmail = employee.PersonalEmail,
+            //            OfficialEamil = employee.OfficialEmail,
+            //            Mobile = employee.Mobile,
+            //            Extension = employee.Ext,
+            //            Gender = employee.Gender,
+            //            DateOfBirth = employee.DateofBirth.HasValue ? employee.DateofBirth.Value.ToShortDateString() : string.Empty,
+            //            DateOfJoining = employee.JoiningDate.HasValue ? employee.JoiningDate.Value.ToShortDateString() : string.Empty,
+            //            IsActive = employee.IsActive.HasValue ? employee.IsActive.Value : false,
+            //        });
+            //    }
+            //}
+
+            //return employees;
         }
         public EmployeeInfo GetEmployeeDetails(string id)
         {
