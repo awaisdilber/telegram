@@ -111,7 +111,107 @@ namespace EmployeeDirectoryAPI.Controllers
                     Mobile = "0333-842-9631",
                     ContactPhone = "0333-842-9631",
                     Address = "Model Town Extension" 
-                }  
+                },
+                new Employee()  
+                {  
+                    EmployeeID = 1015, 
+                    FullName = "Adnan Ansari", 
+                    DepartmentID = 1,
+                    Ext = "101",
+                    Mobile = "0312-842-9631",
+                    ContactPhone = "0312-842-9631",
+                    Address = "Model Town" 
+                },  
+                new Employee()  
+                {  
+                    EmployeeID = 201, 
+                    FullName = "Bashir Ahmed", 
+                    DepartmentID = 1,
+                    Ext = "104",
+                    Mobile = "0300-842-9631",
+                    ContactPhone = "0300-842-9631",
+                    Address = "Bahria Town" 
+                },  
+                new Employee()  
+                {  
+                    EmployeeID = 401, 
+                    FullName = "Latif Ashraf", 
+                    DepartmentID = 1,
+                    Ext = "129",
+                    Mobile = "0321-842-9631",
+                    ContactPhone = "0321-842-9631",
+                    Address = "Bahria Town" 
+                },  
+                new Employee()  
+                {  
+                    EmployeeID = 301, 
+                    FullName = "Haroon Zia Qureshi", 
+                    DepartmentID = 1,
+                    Ext = "103",
+                    Mobile = "0345-842-9631",
+                    ContactPhone = "0345-842-9631",
+                    Address = "BR Society" 
+                },  
+                new Employee()  
+                {  
+                    EmployeeID = 501, 
+                    FullName = "Muhammad Salahuddin", 
+                    DepartmentID = 1,
+                    Ext = "129",
+                    Mobile = "0333-842-9631",
+                    ContactPhone = "0333-842-9631",
+                    Address = "Model Town Extension" 
+                },
+                new Employee()  
+                {  
+                    EmployeeID = 878, 
+                    FullName = "Saif Dilber", 
+                    DepartmentID = 1,
+                    Ext = "101",
+                    Mobile = "0312-842-9631",
+                    ContactPhone = "0312-842-9631",
+                    Address = "Model Town" 
+                },  
+                new Employee()  
+                {  
+                    EmployeeID = 1010, 
+                    FullName = "Muhammad Uzair", 
+                    DepartmentID = 1,
+                    Ext = "104",
+                    Mobile = "0300-842-9631",
+                    ContactPhone = "0300-842-9631",
+                    Address = "Bahria Town" 
+                },  
+                new Employee()  
+                {  
+                    EmployeeID = 444, 
+                    FullName = "Hadeed Longest Name In App", 
+                    DepartmentID = 1,
+                    Ext = "129",
+                    Mobile = "0321-842-9631",
+                    ContactPhone = "0321-842-9631",
+                    Address = "Bahria Town" 
+                },  
+                new Employee()  
+                {  
+                    EmployeeID = 333, 
+                    FullName = "Ali Gohar", 
+                    DepartmentID = 1,
+                    Ext = "103",
+                    Mobile = "0345-842-9631",
+                    ContactPhone = "0345-842-9631",
+                    Address = "BR Society" 
+                },  
+                new Employee()  
+                {  
+                    EmployeeID = 555, 
+                    FullName = "Ibrahim Saif", 
+                    DepartmentID = 1,
+                    Ext = "129",
+                    Mobile = "0333-842-9631",
+                    ContactPhone = "0333-842-9631",
+                    Address = "Model Town Extension" 
+                }
         };
         public IList<Employee> GetAllEmployees()
         {
