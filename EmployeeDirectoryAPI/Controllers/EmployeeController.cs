@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web.Hosting;
 using System.Web.Http;
 
 namespace EmployeeDirectoryAPI.Controllers
@@ -25,14 +26,26 @@ namespace EmployeeDirectoryAPI.Controllers
         private IList<Employee> GetAllEmployeesThroughJSON()
         {
             IList<Employee> employeeList = new List<Employee>();
-
-            using (StreamReader r = new StreamReader(System.AppDomain.CurrentDomain.BaseDirectory + "/EmployeeJSONData.json"))
+            try
             {
-                string json = r.ReadToEnd();
-                employeeList = JsonConvert.DeserializeObject<List<Employee>>(json);
+                using (StreamReader r = new StreamReader(VirtualPathProvider.OpenFile("~/EmployeeJSONData.json")))
+                {
+                    string json = r.ReadToEnd();
+                    employeeList = JsonConvert.DeserializeObject<List<Employee>>(json);
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                Employee emp = new Employee();
+                emp.FullName = ex.Message;
+                employeeList.Add(emp);
+                //return new JsonException(ex.Message);
+                //throw;
             }
 
             return employeeList;
+            
         }
     }
 }

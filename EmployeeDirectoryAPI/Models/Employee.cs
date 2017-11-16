@@ -24,6 +24,7 @@ namespace EmployeeDirectoryAPI.Models
         public string Mobile { get; set; }
         public string ContactPhone { get; set; }
         public string Ext { get; set; }
+      
     
     }
 }

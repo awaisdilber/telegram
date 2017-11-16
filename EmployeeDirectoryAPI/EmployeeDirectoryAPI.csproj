@@ -133,7 +133,9 @@
     <Content Include="Models\EmployeeDirectoryModel.edmx.diagram">
       <DependentUpon>EmployeeDirectoryModel.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\WebAPI-EmployeeDirectory - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\WebAPI-EmployeeDirectory - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\WebAPI-EmployeeDirectory - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\WebAPI-EmployeeDirectory - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
