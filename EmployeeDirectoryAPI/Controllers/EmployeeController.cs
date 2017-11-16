@@ -26,7 +26,7 @@ namespace EmployeeDirectoryAPI.Controllers
         {
             IList<Employee> employeeList = new List<Employee>();
 
-            using (StreamReader r = new StreamReader(System.AppDomain.CurrentDomain.BaseDirectory + "/EmployeeJSONData.json"))
+            using (StreamReader r = new StreamReader(VirtualPathProvider.OpenFile("~/EmployeeJSONData.json")))
             {
                 string json = r.ReadToEnd();
                 employeeList = JsonConvert.DeserializeObject<List<Employee>>(json);
