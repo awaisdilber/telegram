@@ -14,58 +14,16 @@ namespace EmployeeDirectoryAPI.Models
     
     public partial class Employee
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Employee()
-        {
-            this.Employee1 = new HashSet<Employee>();
-        }
-    
         public int EmployeeID { get; set; }
-        public string Address { get; set; }
-        public Nullable<int> RoleID { get; set; }
-        public Nullable<long> DepartmentID { get; set; }
-        public Nullable<long> DesignationID { get; set; }
-        public string GradeID { get; set; }
+        public string Department { get; set; }
+        public string Designation { get; set; }
         public string EmployeeNo { get; set; }
-        public string Email { get; set; }
-        public string FullName { get; set; }
-        public string CommonName { get; set; }
-        public Nullable<bool> IsActive { get; set; }
-        public Nullable<long> ReportingManagerID { get; set; }
-        public string DomainUserName { get; set; }
-        public Nullable<System.DateTime> DateCreated { get; set; }
-        public Nullable<System.DateTime> DateModified { get; set; }
-        public Nullable<long> CreatedBy { get; set; }
-        public Nullable<long> ModifiedBy { get; set; }
-        public Nullable<int> SubstitudeID { get; set; }
-        public byte[] ProfilePicture { get; set; }
-        public string FatherName { get; set; }
-        public Nullable<System.DateTime> DateofBirth { get; set; }
-        public string Gender { get; set; }
-        public string MaritalStatus { get; set; }
         public string PersonalEmail { get; set; }
+        public string FullName { get; set; }
         public string OfficialEmail { get; set; }
         public string Mobile { get; set; }
         public string ContactPhone { get; set; }
         public string Ext { get; set; }
-        public string CNIC { get; set; }
-        public string BankAccountNumber { get; set; }
-        public Nullable<System.DateTime> JoiningDate { get; set; }
-        public Nullable<System.DateTime> AppraisalDate { get; set; }
-        public string AppraisalType { get; set; }
-        public Nullable<bool> IsOnProbation { get; set; }
-        public Nullable<System.DateTime> ProbationStartDate { get; set; }
-        public Nullable<System.DateTime> ProbationEnddate { get; set; }
-        public string CurrentStatus { get; set; }
-        public Nullable<System.DateTime> ProRateByDate { get; set; }
-        public Nullable<long> BankID { get; set; }
-        public string BankAccountTitle { get; set; }
-        public Nullable<decimal> OpeningBalance { get; set; }
-        public string PreviousGradeID { get; set; }
-        public Nullable<bool> IsAllowed { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Employee> Employee1 { get; set; }
-        public virtual Employee Employee2 { get; set; }
     }
 }

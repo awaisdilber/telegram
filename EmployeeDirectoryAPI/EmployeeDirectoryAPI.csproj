@@ -83,6 +83,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="EmployeeJSONData.json" />
     <Content Include="Global.asax" />
     <Content Include="Models\EmployeeDirectoryModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -132,6 +133,8 @@
     <Content Include="Models\EmployeeDirectoryModel.edmx.diagram">
       <DependentUpon>EmployeeDirectoryModel.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\WebAPI-EmployeeDirectory - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\WebAPI-EmployeeDirectory - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
